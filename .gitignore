@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Data — raw datasets and preprocessed cache (large binary files)
+data/ml-1m/
+data/ml-1m.zip
+data/ml-20m/
+data/ml-20m.zip
+data/processed/
+data/processed-20m/
+
+# Model checkpoints (large binary files)
+checkpoints/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code internal
+.claude/
+
+# Temp images
+explaination.jpeg
+formula.jpeg
