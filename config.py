@@ -3,9 +3,9 @@ import torch
 
 class Config:
     # ── Dataset  ('ml-1m' or 'ml-20m') ───────────────────────────────────────
-    dataset         = 'ml-20m'
-    data_dir        = './data/ml-20m'
-    processed_dir   = './data/processed-20m'
+    dataset         = 'ml-1m'
+    data_dir        = './data/ml-1m'
+    processed_dir   = './data/processed'
     min_interactions = 10
 
     # ── Embedding / Model ─────────────────────────────────────────────────────
@@ -17,10 +17,10 @@ class Config:
 
     # ── LightGCN (pre-training) ───────────────────────────────────────────────
     gnn_layers      = 3
-    gnn_epochs      = 10           # ML-20M: 10 epochs sufficient; 100 for ML-1M
+    gnn_epochs      = 100
     gnn_lr          = 1e-3
     gnn_neg         = 1
-    gnn_batch_size  = 65536        # large batches → fewer GNN forward passes per epoch
+    gnn_batch_size  = 4096
 
     # ── Time-gap discretization ───────────────────────────────────────────────
     num_time_buckets = 256
@@ -32,10 +32,10 @@ class Config:
     ms_min_samples  = 3
 
     # ── Training ──────────────────────────────────────────────────────────────
-    batch_size      = 2048         # larger batch for 20M dataset
+    batch_size      = 1024
     lr              = 1e-3
     weight_decay    = 1e-4
-    epochs          = 20           # ML-20M: 20 epochs; 50 for ML-1M
+    epochs          = 50
     num_negatives   = 4
     eval_negatives  = 99           # UIRS-GNN protocol: 99 neg + 1 target
 
